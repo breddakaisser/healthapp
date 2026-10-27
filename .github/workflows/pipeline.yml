@@ -1,0 +1,29 @@
+name: run pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  test_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install all dependencies
+        run: npm ci
+
+      - name: Check code linting
+        run: npm run lint
+
+      - name: Execute automated tests
+        run: npm test
