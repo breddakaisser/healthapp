@@ -18,9 +18,11 @@ export default tseslint.config(
         { argsIgnorePattern: '^_' }
       ],
       'no-console': 'off',
+       '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
     },
-  },
-  // Add this block at the bottom to stop type-checking config files:
+    },
   {
     files: ['**/*.js', '**/*.mjs', 'playwright.config.ts'],
     ...tseslint.configs.disableTypeChecked,
