@@ -24,6 +24,9 @@ jobs:
 
       - name: Check code linting
         run: npm run lint
+       
+      - name: install Playwright browsers
+        run: npx playwright install --with-deps
 
       - name: Execute automated tests
         run: npm test
