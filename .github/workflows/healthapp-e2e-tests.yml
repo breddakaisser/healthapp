@@ -1,4 +1,4 @@
-name: run pipeline
+name: healthapp-e2e-tests
 
 on:
   push:
